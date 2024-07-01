@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predicción de Alquiler de Bicicletas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1>Predicción de Alquiler de Bicicletas</h1>
+            </div>
+            <div class="card-body">
+                <form action="/predict" method="post">
+                    <div class="form-group">
+                        <label for="season">Temporada:</label>
+                        <select class="form-control" id="season" name="season" required>
+                            <option value="1">Invierno</option>
+                            <option value="2">Primavera</option>
+                            <option value="3">Verano</option>
+                            <option value="4">Otoño</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="month">Mes (1 - 12):</label>
+                        <input type="number" class="form-control" id="month" name="month" min="1" max="12" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="holiday">Festivo:</label>
+                        <select class="form-control" id="holiday" name="holiday" required>
+                            <option value="0">No</option>
+                            <option value="1">Sí</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="workingday">Día Laborable:</label>
+                        <select class="form-control" id="workingday" name="workingday" required>
+                            <option value="0">No</option>
+                            <option value="1">Sí</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="weathersit">Condiciones Meteorológicas:</label>
+                        <select class="form-control" id="weathersit" name="weathersit" required>
+                            <option value="1">Despejado, Pocas Nubes, Parcialmente Nublado</option>
+                            <option value="2">Niebla + Nublado, Niebla + Nubes Rotas</option>
+                            <option value="3">Lluvia Ligera + Tormenta + Nubes Dispersas</option>
+                            <option value="4">Lluvia Fuerte + Granizo + Tormenta + Niebla</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="temp">Temperatura (Celsius):</label>
+                        <input type="number" class="form-control" id="temp" name="temp" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hum">Humedad (%):</label>
+                        <input type="number" class="form-control" id="hum" name="hum" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="windspeed">Velocidad del Viento KM/H:</label>
+                        <input type="number" class="form-control" id="windspeed" name="windspeed" step="0.01" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Predecir</button>
+                </form>
+                <a href="/data-analysis" class="btn btn-secondary btn-block mt-4">Ver Análisis de Datos</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

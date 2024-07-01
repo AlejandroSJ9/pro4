@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado de la Predicción</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1>Resultado de la Predicción</h1>
+            </div>
+            <div class="card-body">
+                <p>La predicción de la demanda de alquiler de bicicletas es: <strong>{{ prediction }}</strong></p>
+                <p>{{ explanation }}</p>
+                <a href="/" class="btn btn-primary btn-block">Hacer otra predicción</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
